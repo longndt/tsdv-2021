@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="student1" class="spring.bean.Student">
+        <property name="name" value="Minh"></property>
+        <property name="address" value="Ha Noi"></property>
+        <property name="email" value="minh@gmail.com"></property>
+        <property name="grade" value="7.5"></property>
+        <property name="id" value="12345"></property>
+    </bean>
+
+    <bean id="student2" class="spring.bean.Student" autowire="byName">
+        <property name="name" value="Huong"></property>
+        <property name="address" value="Ha Noi"></property>
+        <property name="email" value="huong@gmail.com"></property>
+        <property name="grade" value="5.6"></property>
+        <property name="id" value="3434"></property>
+    </bean>
+
+    <bean id="lecturer1" class="spring.bean.Lecturer">
+        <property name="name" value="Tuan"></property>
+        <property name="email" value="tuan@gmail.com"></property>
+        <property name="age" value="33"></property>
+    </bean>
+    <bean id="lecturer2" class="spring.bean.Lecturer">
+        <property name="name" value="Thu"></property>
+        <property name="email" value="thu@gmail.com"></property>
+        <property name="age" value="23"></property>
+    </bean>
+
+    <bean id="s3" class="spring.bean.Student" autowire="byName">
+        <property name="name" value="Huyen"></property>
+        <property name="address" value="Da Nang"></property>
+        <property name="email" value="huyen@gmail.com"></property>
+        <property name="grade" value="8.7"></property>
+        <property name="id" value="8888"></property>
+    </bean>
+
+    <bean id="mobile" class="spring.bean.Mobile">
+        <property name="mobile" value="0999999999"></property>
+    </bean>
+
+    <bean id="mobile1" class="spring.bean.Mobile">
+        <property name="mobile" value="09454545454"></property>
+    </bean>
+</beans>
