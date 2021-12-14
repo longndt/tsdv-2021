@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="s1" class="spring.basic.bean.Student">
+        <property name="id" value="1"></property>
+        <property name="name" value="Minh"></property>
+        <property name="email" value="minh@gmail.com"></property>
+    </bean>
+
+    <bean id="s2" class="spring.basic.bean.Student">
+        <property name="id" value="2"></property>
+        <property name="name" value="Thuy"></property>
+        <property name="email" value="thuy@gmail.com"></property>
+    </bean>
+
+    <bean id="mobile123" class="spring.basic.bean.Mobile">
+        <property name="name" value="iPhone 13"></property>
+        <property name="price" value="1100"></property>
+    </bean>
+
+    <bean id="mobile" class="spring.basic.bean.Mobile">
+        <property name="name" value="Note 20"></property>
+        <property name="price" value="1200"></property>
+    </bean>
+
+    <bean id="student" class="spring.basic.bean.Student" autowire="byName">
+        <property name="id" value="111"></property>
+        <property name="name" value="Dung"></property>
+        <property name="email" value="dung@gmail.com"></property>
+    </bean>
+
+    <bean id="m1" class="spring.basic.bean.Mobile">
+        <constructor-arg type="java.lang.String" value="Samsung"></constructor-arg>
+        <constructor-arg type="double" value="1123.45"></constructor-arg>
+    </bean>
+
+    <bean id="a1" class="spring.basic.bean.Address">
+        <constructor-arg type="int" value="581"></constructor-arg>
+        <constructor-arg type="java.lang.String" value="Kim Ma"></constructor-arg>
+    </bean>
+
+    <bean id="a2" class="spring.basic.bean.Address">
+        <constructor-arg type="int" value="456"></constructor-arg>
+        <constructor-arg type="java.lang.String" value="Nguyen Trai"></constructor-arg>
+    </bean>
+
+    <bean id="t1" class="spring.basic.bean.Teacher">
+        <constructor-arg index="0" type="int" value="333"></constructor-arg>
+        <constructor-arg index="1" type="java.lang.String" value="Hung Lam"></constructor-arg>
+        <constructor-arg index="2" type="java.lang.String" value="hunglam@gmail.com"></constructor-arg>
+        <property name="mobile" ref="mobile"></property>
+        <property name="address" ref="a2"></property>
+    </bean>
+
+</beans>
