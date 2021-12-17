@@ -2,18 +2,18 @@
   Created by IntelliJ IDEA.
   User: long
   Date: 17/12/2021
-  Time: 11:15 AM
+  Time: 12:42 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page isELIgnored="false" %>
 <html>
 <head>
-    <title>Hello Spring</title>
+    <title>Title</title>
 </head>
 <body>
-    <h2>Hello ${name} </h2>
-    <h3>Welcome ${year} </h3>
-    <a href="<%= request.getContextPath()%>/">Homepage</a>
+<h3> Hello ${name} </h3>
+<h3> You are ${age} year old </h3>
+<h3> You were born in ${yob} </h3>
 </body>
 </html>
