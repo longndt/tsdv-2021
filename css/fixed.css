@@ -1,0 +1,31 @@
+.wrapper {
+   position: absolute;
+   width: 800px;
+   height: 600px;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 0;
+   background-color: lavender;
+}
+.extra {
+   position: absolute;
+   width: 250px;
+   height: 300px;
+   top: 0;
+   left: 0;
+   background-color: aquamarine;
+   border: 3px solid red;
+}
+.main {
+   margin-left: 300px;
+   background-color: cyan;
+   height: 300px;
+   border: 3px solid coral;
+   overflow: auto;
+}
+.footer {
+   background-color: gold;
+   height: 300px;
+   text-align: center;
+   padding-top: 50px;
+}
