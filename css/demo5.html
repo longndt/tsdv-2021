@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Direct child - Descendant</title>
+   <style>
+      div.parent>h3 {
+         color: red;
+      }
+      div.parent>h3>a {
+         text-decoration: none;
+      }
+      div.parent>h3>a>img {
+         border-radius: 40%;
+      }
+      div.parent span {
+         font-style: italic;
+         color: blue;
+      }
+      div.parent>h3>span {
+         color: green;
+      }
+      body {
+         color: fuchsia;
+      }
+   </style>
+</head>
+<body>
+   <div class="parent">
+      <h3>Direct child <br>
+         <a href="#">
+            <img src="hanoi.jpg" width="50" height="50">
+         </a>
+         <br>
+         <span>Descendant</span>
+      </h3>
+   </div>
+   <div>
+      <h3>Heading 3</h3>
+      <img src="background.jpg" width="50%" height="50%">
+   </div>
+   <span>Another span</span>
+</body>
+</html>

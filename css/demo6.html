@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      h4 {
+         text-transform: uppercase;     
+      }
+      li {
+         list-style-type: none;
+         display: inline-block;
+         margin-left: 10px;
+      }
+      a {
+         text-decoration: none;
+         color: red;
+         font-weight: bold;
+      }
+      a:hover {
+         color: blue;
+         font-size: 120%;
+         background-color: aqua;
+      }
+      fieldset {
+         width: fit-content;
+      }
+   </style>
+</head>
+<body>
+   <h4>This is a heading</h4>
+   <nav>
+      <ul>
+         <li>
+            <a href="#">Menu 1</a>
+         </li>
+         <li>
+            <a href="#">Menu 2</a>
+         </li>
+         <li>
+            <a href="#">Menu 3</a>
+         </li>
+         <li>
+            <a href="#">Menu 4</a>
+         </li>
+      </ul>
+   </nav>
+   <form>
+      <fieldset>
+         <legend>Customer Login</legend>
+         <input type="text" required minlength="2" maxlength="10" placeholder="Username"><br><br>
+         <input type="text" required placeholder="Password"><br><br>
+         <input type="submit" value="Login">
+      </fieldset>
+   </form>
+   <header>This is header</header>
+   <footer>Tnis is footer</footer>
+</body>
+</html>

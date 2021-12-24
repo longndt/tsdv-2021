@@ -1,0 +1,53 @@
+body {
+   margin-left: auto;
+   margin-right: auto;
+   width: 95%;
+   text-align: center;
+}
+
+.header {
+   background-color: aquamarine;
+   height: 100px;
+   line-height: 100px;
+}
+
+.navigation {
+   background-color: rgb(223, 175, 17);
+   height: 60px;
+   line-height: 60px;
+   margin-top: 20px;
+}
+
+.content {
+   height: 300px;
+   line-height: 300px;
+   margin-top: 20px;
+   position: positive;
+}
+
+.left {
+   background-color: rgb(118, 155, 223);
+   width: 20%;
+   float: left;
+}
+
+.center {
+   background-color: rgb(204, 228, 72);
+   float: left;
+   margin-left: 2%;
+   width: 56%;
+}
+
+.right {
+   background-color: rgb(218, 104, 157);
+   width: 20%;
+   float: right;
+}
+
+.footer {
+   background-color: rgb(18, 208, 233);
+   height: 120px;
+   line-height: 120px;
+   clear: left;
+   margin-top: 60px;
+}
