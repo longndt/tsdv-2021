@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <form action="" onsubmit="findMax()">
+      <fieldset style="width: fit-content">
+         <legend>Find Max</legend>
+         <input type="number" required id ="a" placeholder="Input a"><br><br>
+         <input type="number" required id ="b" placeholder="Input b"><br><br>
+         <input type="number" required id ="c" placeholder="Input c"><br><br>
+         <input type="submit" value="OK">
+      </fieldset>
+   </form>
+   <script>
+      function findMax() {
+         //parseInt: convert from String (text) to Integer (number)
+         var a = parseInt(document.getElementById("a").value);
+         var b = parseInt(document.getElementById("b").value);
+         var c = parseInt(document.getElementById("c").value);
+         if (a>=b && a>=c) {
+            alert("Max is " + a);
+         } else if (b>=a && b>=c) {
+            alert("Max is " + b);
+         } else {
+            alert("Max is " + c);
+         }
+      }
+   </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   a = <span id="a"></span><br>
+   b = <span id="b"></span><br>
+   c = a + b = <span id="c"></span>
+ 
+   <script>
+      let a = 10;
+      a = 15;
+      var b = 20;
+      var b = 50;
+      let c = a + b;
+      document.getElementById('a').innerHTML = a;
+      document.getElementById('b').innerHTML = b;
+      document.getElementById('c').innerHTML = c;
+     
+      const pi = 3.14;
+      document.write("<br>" + pi + "<br>");
+      var x = 3;
+      var y = 5;
+      var x = 10.50;
+      var z = "Hello World";
+      document.write(z + "<br>");
+      console.log(z);
+      function total () {
+         document.write(x+y);
+      }
+      total();
+      function sum() {
+         return x+y;
+      }
+      document.write("<br>" + sum() + "<br>");
+      function getTotal (a, b) {
+         document.write(a+b);
+      }
+      getTotal(10,20);
+    </script>
+</body>
+</html>

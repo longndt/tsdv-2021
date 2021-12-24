@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <h3 id="toshiba">Toshiba Software Development Company</h3>
+   <button onmouseover="uppercase()">Uppercase</button>
+   <button onclick="setBlue()">Set blue color</button>
+   <button onclick="setRed()">Set red color</button>
+   <button onclick="setDouble()">Set double font size</button>
+   <br>
+   <img id="vn" src="vietnam.jpg" alt="" width="50%" height="50%">
+   <br>
+   <button onmouseover="setCircle()">Set Circle</button>
+   <button onmouseover="setRectangle()">Set Rectangle</button>
+   <br>
+   <button onmouseover="changeBackground()">Change Background</button>
+   <script>
+      function uppercase() {
+         document.getElementById("toshiba").style.textTransform = "uppercase";
+      }
+      function setBlue() {
+         document.getElementById("toshiba").style.color = "blue";
+      }
+      function setRed() {
+         document.getElementById("toshiba").style.color = "red";
+      }
+      function setDouble() {
+         document.getElementById("toshiba").style.fontSize = "200%";
+      }
+      function setCircle() {
+         document.getElementById("vn").style.borderRadius = "50%";
+      }
+      function setRectangle() {
+         document.getElementById("vn").style.borderRadius = "0";
+      }
+      function changeBackground() {
+         document.body.style.backgroundColor = "lime";
+      }
+   </script>
+</body>
+</html>

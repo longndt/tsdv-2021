@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <form onsubmit="findAge()">
+      <input type="number" id="yob" required placeholder="Input birthyear">
+      <button type="submit">OK</button>
+   </form>
+  
+   <script>
+      function findAge() {
+         var yob = parseInt(document.getElementById('yob').value);
+         var date = new Date();
+         if (yob < 1930 || yob > 2021) {
+            alert ("Invalid Birth year");
+         } else {
+            var age = date.getFullYear() - yob;
+            alert("You are " + age + " year old now");
+         }
+      }
+   </script>
+</body>
+</html>
