@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <form id="form">
+      <fieldset>
+         <input type="text" id="grade" required placeholder="Input grade">
+         <br><br>
+         <input type="submit" value="OK">  
+      </fieldset>
+   </form>
+   <script>
+      /*
+         0-5: Grade E
+         5-6: Grade D
+         6-7: Grade C
+         7-8: Grade B
+         8-9: Grade A
+         9-10: Grade A+ 
+      */
+      document.getElementById('form').addEventListener('submit', function(){
+         var grade = parseFloat(document.getElementById('grade').value);
+         if (grade >= 9.0 && grade <=10.0) {
+            alert("Grade A+");
+         } else if (grade >= 8.0 && grade <9.0) {
+            alert("Grade A");
+         } else if (grade >= 7.0 && grade <8.0) {
+            alert("Grade B");
+         } else if (grade >= 6.0 && grade <7.0) {
+            alert("Grade C");
+         } else if (grade >= 5.0 && grade <6.0) {
+            alert("Grade D");
+         } else if (grade <5.0 && grade >=0){
+            alert("Grade E");
+         } else {
+            alert("Invalid grade");
+         }
+      });
+   </script>
+</body>
+</html>

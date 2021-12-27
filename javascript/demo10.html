@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <script>
+      var email = "gch12345@fpt.edu.vn";
+      document.write("Length: " + email.length + "<br>")
+      var id1 = email.slice(3,8); 
+      // get character 3 (index = 0) to character 8 (index = 7)
+      //Note: last character must add for 1 value to index
+      document.write(id1 + "<br>");
+      var id2 = email.substr(3,5);
+      //3: start index
+      //5: length
+      document.write(id2 + "<br>");
+      //charAt: lấy ra element theo index
+      document.write(email.charAt(8) + "<br>");
+      //split: chia string theo điều kiện/ký tự
+      var x = email.split("@");
+      document.write(x[0] + "<br>");
+      document.write(x[1] + "<br>");
+      var fullname = "Nguyen Hoang Nam";
+      var a = fullname.split(" ");
+      document.write("First name: " +  a[2] + "<br>");
+      document.write("Middle name: " +  a[1] + "<br>");
+      document.write("Family name: " +  a[0] + "<br>");
+   </script>
+</body>
+</html>

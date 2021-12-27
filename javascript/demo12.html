@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <form>
+      <input type="text" id="mobile">
+      <br><br>
+      <button type="button" id="add">Add</button>
+   </form>
+   <script>
+      document.getElementById("add").addEventListener("click", function(){
+         var mobile = document.getElementById("mobile").value;
+         var m = document.createElement("li");
+         m.innerHTML = mobile;
+         y.appendChild(m);
+      })
+
+      //tạo thẻ p (paragraph)
+      var x = document.createElement("p");
+      //gán giá trị cho thẻ p
+      x.innerHTML = "Hello World";
+      //đưa thẻ p vào body
+      document.body.appendChild(x);
+      //format thẻ p
+      x.style.color = "red";
+      x.style.fontStyle = "italic";
+      //tạo 1 ordered list (ol)
+      var y = document.createElement("ol");
+      y.innerHTML = "Mobile brand";
+      var y1 = document.createElement("li");
+      y1.innerHTML = "iPhone";
+      y.appendChild(y1);
+      var y2 = document.createElement("li");
+      y2.innerHTML = "Samsung";
+      y.appendChild(y2);
+      var y3 = document.createElement("li");
+      y3.innerHTML = "Oppo";
+      y.insertBefore(y3,y1);
+      y.removeChild(y1);
+      document.body.appendChild(y);
+   </script>
+</body>
+</html>

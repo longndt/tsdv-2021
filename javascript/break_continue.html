@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <script>
+      var a = 5;
+      var b = '5';
+      // ===: so sánh cả kiểu (type) + giá trị (value)
+      if (a === b) {
+         document.write("True <br>");
+      } else {
+         document.write("False <br>");
+      }
+
+      for (var i=1; i<=10; i++) {
+         if (i==5) {
+            //break; //stop all the loop
+            continue; //skip the current loop
+         }
+         document.write(i + "<br>");
+      }
+
+   </script>
+</body>
+</html>

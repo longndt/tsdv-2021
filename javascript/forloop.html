@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <form action="">
+      <fieldset>
+         <input type="number" id="a" placeholder="Input a"><br><br>
+         <input type="number" id="b" placeholder="Input b"><br><br>
+         <button type="button" id="ok">OK</button>
+      </fieldset>
+   </form>
+   <h5 id="result"></h5>
+   <script>
+      document.getElementById('ok').addEventListener('click', function() {
+         var a = parseInt(document.getElementById('a').value);
+         var b = parseInt(document.getElementById('b').value);
+         if (a > b) {
+            alert("a must be smaller than b");
+         } else {
+            var list = "";
+            var sum = 0;
+            for (var i=a; i<=b; i++) {
+               list += i + "<br>";
+               sum +=i;
+            }
+            var output = "List: <br>" + list;
+            output += "Total: " + sum;
+           document.getElementById("result").innerHTML = output;
+         }
+      });
+   </script>
+</body>
+</html>
