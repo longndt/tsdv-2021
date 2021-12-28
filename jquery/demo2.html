@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <script src="jquery-3.6.0.min.js"></script>
+</head>
+<body>
+   <h3>Toshiba</h3>
+   <button id="test">Double click me</button>
+   <br><br>
+   <button id="showForm">Show Form</button>
+   <button id="hideForm">Hide Form</button>
+   <br><br>
+   <form action="">
+      <fieldset> 
+         <legend>Customer Registration</legend>
+         <input type="text" name="" id="name" placeholder="Input name">
+         <br><br>
+         <input type="email" name="" id="email" placeholder="Input email">
+         <br><br>
+         <button type="button" id="ok">OK</button>
+      </fieldset>  
+   </form> 
+   <br><br>
+   <p></p>
+   <script>
+      $("#showForm").click(function(){
+         $("form").show();
+      })
+      $("#hideForm").click(function(){
+         $("form").hide();
+      })
+
+      $("#test").dblclick(function(){
+         alert("We are learning jQuery");
+      })
+      $("h3").mouseover(function() {
+         $("body").css("background-color","green");
+      })
+      $("h3").mouseleave(function() {
+         $("body").css("background-color","white");
+      })
+      $("fieldset").css({"width":"fit-content","background-color":"yellow"});
+      $("#ok").click(function() {
+         var name = $("#name").val();
+         var email = $("#email").val();
+         $("p").text("Name: " + name + " - " + "Email: " + email);
+      });
+   </script>
+</body>
+</html>

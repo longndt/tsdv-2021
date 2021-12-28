@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <script src="jquery-3.6.0.min.js"></script>
+</head>
+<body>
+   <h3></h3>
+   <select id="language">
+      <option value="">Select a language</option>
+      <option value="vietnamese">Vietnamese</option>
+      <option value="english">English</option>
+      <option value="french">French</option>
+   </select>
+   <br><br>
+   <input type="radio" class="bg" name="background" value="yellow"> Yellow 
+   <input type="radio" class="bg" name="background"value="green"> Green
+   <input type="radio" class="bg" name="background" value="brown"> Brown
+   <br><br>
+   <h1>Happy new year 2022 !</h1>
+   <form action="">
+      <input type="text" name="" id="color" placeholder="Input color code here">
+      <button type="button" id="ok">OK</button>
+   </form>
+   <script>
+      $("#ok").click(function(){
+         var c = $("#color").val();
+         $("h1").css("color", c);
+      })
+      $("#language").change(function() {
+         var message = "";
+         if ($(this).val() == "vietnamese") {
+            message  = "Xin chào";
+         } else if ($(this).val() == "english") {
+            message  = "Hello";
+         } else if ($(this).val() == "french") {
+            message  = "Bonjour";
+         }
+         $("h3").text(message );
+      })
+      $(".bg").change(function() {
+         if ($(this).val() === "yellow") {
+            $("body").css("background-color","yellow");
+         }else if ($(this).val() == "green") {
+            $("body").css("background-color","green");
+         } else if ($(this).val() == "brown") {
+            $("body").css("background-color","brown");
+         }
+      })
+   </script>
+</body>
+</html>
