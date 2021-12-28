@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <form>
+      <fieldset class="fieldset">
+         <legend class="legend">Add new person</legend>
+         <input type="text" class="input">
+         <br><br>
+         <input type="number" class="input">
+         <br><br>
+         <label for="">Gender: </label>
+         <input type="radio" name="gender" id="male" value="Male"> Male
+         <input type="radio" name="gender" id="female" value="Female"> Female
+         <br><br>
+         <button type="button" class="button">Add</button>
+         <input type="reset" class="input">
+      </fieldset>
+   </form>
+   <br><br>
+   <table class="table" border="1" style="visibility: hidden">
+      <tr> <!-- first row : index = 0 -->
+         <th>No.</th>
+         <th>Name</th>
+         <th>Age</th>
+         <th>Gender</th>
+      </tr>
+   </table>
+   <p id="info"></p>
+   <script>
+      //set thuộc tính cho 2 ô input name và age
+      var input_name = document.getElementsByClassName('input').item(0);
+      input_name.setAttribute("placeholder","Input name");
+      var input_age = document.getElementsByClassName('input').item(1);
+      input_age.setAttribute("placeholder","Input age");
+      //set CSS cho fieldset (form border)
+      document.getElementsByClassName("fieldset").item(0).style.width = "fit-content";
+      document.getElementsByClassName("fieldset").item(0).style.backgroundColor= "yellow";
+      //set CSS cho legend (form title)
+      document.getElementsByClassName("legend").item(0).style.fontWeight = "bold";
+      document.getElementsByClassName("legend").item(0).style.color = "red";
+      //set thuộc tính hidden cho nút reset
+      var reset = document.getElementsByClassName("input").item(2);
+      reset.style.visibility = "hidden";
+      //tạo biến i là index của row trong table
+      var i = 1; //initial value = 1 => hàng số 2
+      //tạo biến đếm cho tổng số male và female
+      var total_male = 0;
+      var total_female = 0;
+      //code thực thi khi chạy nút add
+      document.getElementsByClassName("button").item(0).addEventListener('click',function() {
+         //gọi đến object table
+         var table = document.getElementsByClassName("table").item(0);
+         //hiển thị table
+         table.style.visibility = "visible";
+         //lấy dữ liệu từ form
+         var name = input_name.value;
+         var age = input_age.value;
+         var gender;
+         if (document.getElementById('male').checked) {
+            gender = document.getElementById('male').value;
+            total_male++;
+         } else if (document.getElementById('female').checked) {
+            gender = document.getElementById('female').value;
+            total_female++;
+         } 
+         //convert age sang integer
+         age = parseInt(age);
+         //insert row mới với index = i
+         var row = table.insertRow(i);
+         //add dữ liệu của từng cột (cell) vào trong row
+         var column1 = row.insertCell(0); //cột number (STT)
+         column1.innerHTML = i;
+         var column2 = row.insertCell(1); //cột name
+         column2.innerHTML = name;
+         var column3 = row.insertCell(2); //cột age
+         column3.innerHTML = age;
+         var column4 = row.insertCell(3); //cột gender
+         column4.innerHTML = gender;
+         //show tổng số male và female
+         var result = "Male: " + total_male + " - " + "Female: " + total_female;
+         document.getElementById("info").innerHTML = result;
+         //chạy nút reset sau khi add dữ liệu
+         reset.click();
+         //tăng giá trị biến i sau khi add
+         i++;
+      });
+   </script>
+</body>
+</html>

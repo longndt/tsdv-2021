@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <form>
+      <fieldset>
+         <legend>Add new person</legend>
+         <input type="text">
+         <br><br>
+         <input type="text">
+         <br><br>
+         <button type="button">Add</button>
+         <input type="reset">
+      </fieldset>
+   </form>
+   <script>
+      //set thuộc tính cho 2 ô input name và age
+      var input_name = document.getElementsByTagName('input').item(0);
+      input_name.setAttribute("placeholder","Input name");
+      var input_age = document.getElementsByTagName('input').item(1);
+      input_age.setAttribute("placeholder","Input age");
+      //set CSS cho fieldset (form border)
+      document.getElementsByTagName("fieldset").item(0).style.width = "fit-content";
+      document.getElementsByTagName("fieldset").item(0).style.backgroundColor= "yellow";
+      //set CSS cho legend (form title)
+      document.getElementsByTagName("legend").item(0).style.fontWeight = "bold";
+      document.getElementsByTagName("legend").item(0).style.color = "red";
+      //set thuộc tính hidden cho nút reset
+      var reset = document.getElementsByTagName("input").item(2);
+      reset.style.visibility = "hidden";
+      //tạo mới 1 unorder list (ul) và add vào thẻ body
+      var list = document.createElement("ol");
+      document.body.appendChild(list);
+      //code thực thi khi chạy nút add
+      document.getElementsByTagName("button").item(0).addEventListener('click',function() {
+         //tạo mới 1 thẻ li trong ul
+         var item = document.createElement("li");
+          //lấy dữ liệu từ form
+         var name = input_name.value;
+         var age = input_age.value;
+         //xác thực dữ liệu input
+         if (name.length == 0) {
+            alert ("You must input name");
+         } else {
+            //convert age sang integer
+            age = parseInt(age);
+            var info = "Name: " + name + " - " + " Age: " + age;
+            //gán giá trị nhập từ form vào thẻ li
+            item.innerHTML = info;
+            //add li vào trong ul
+            list.appendChild(item);
+            //chạy nút reset sau khi add dữ liệu
+            reset.click();
+         }
+      });
+   </script>
+</body>
+</html>

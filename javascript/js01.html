@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <h1 id="a">This is heading 1</h1>
+   <input type="text" name="" id="b" value="Input name">
+   <p class="hanoi"></p>This is a paragraph</p>
+   <h3 class="hanoi">This is a heading 3</h3>
+   <h5 class="hanoi"></h5>
+   <ul>
+      <li>Vietnam</li>
+      <li>Thailand</li>
+      <li>Singapore</li>
+      <li>Malaysisa</li>
+      <li></li>
+   </ul>
+   <script>
+      //get element by id : return single element
+      var a = document.getElementById('a').innerHTML;
+      console.log(a);
+      var b = document.getElementById('b').value;
+      console.log(b);
+      document.getElementById("a").innerHTML = "Toshiba";
+      document.getElementById("b").value = "Nhập họ tên";
+      //get elements by tag name : return multiple elements (array)
+      var li = document.getElementsByTagName('li');
+      console.log(li[2].innerHTML);
+      var malaysia = document.getElementsByTagName('li').item(3);
+      console.log(malaysia.innerHTML); 
+      document.getElementsByTagName("li").item(4).innerHTML = "Indonesia";
+      //get elements by class name : return multiple elements (array)
+      var text = "Hanoi is the capital of Vietnam";
+      document.getElementsByClassName("hanoi").item(0).innerHTML = text;
+      document.getElementsByClassName("hanoi").item(1).style.color = "blue";
+      var hanoi = document.getElementsByClassName("hanoi"); //array
+      hanoi[2].innerHTML = "Text from Javascript";
+      for (var i=0; i<hanoi.length; i++) {
+         hanoi[i].style.backgroundColor = "lime";
+      }
+   </script>
+</body>
+</html>
