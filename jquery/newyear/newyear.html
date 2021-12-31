@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>New Year</title>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+   <img src="2021.png" alt="">
+   <h4>Goodbye 2021 !</h4>
+   <button>Click me</button>
+   <script>
+      $('img').attr('title','This is zodiac for 2021');
+      $('img').attr({"width":"150px","height":"150px"});
+      //ẩn đối tượng và mất khu vực hiển thị
+      $('button').hide();
+      //$('h4').hide();
+      //ẩn đối tượng nhưng vẫn giữ lại khu vực hiển thị
+      //$('img').css('visibility','hidden');
+      $('img').mouseover(function() {
+         //ẩn nút bấm
+         //$(this).hide();
+         //thực thi hiệu ứng biến mất (2000ms = 2 giây)
+        $('img').fadeOut(2000, function(){
+            //thay đổi thuộc tính hoặc giá trị của đối tượng
+            $('img').attr('src','2022.png');
+        });
+        $('h4').fadeOut(2000, function(){
+         $('h4').text('Hello 2022 !');
+        });
+        //thực thi hiệu ứng xuất hiện
+        $('img').fadeIn(2000);
+        $('h4').fadeIn(2000);
+      })
+   </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Quiz</title>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+   <h3>What is the capital of Vietnam ?</h3>
+   <button id='hn'>Hanoi</button>
+   <button id='hcm'>HCM City</button>
+   <br><br><br>
+   <input type="radio" name="answer" id="" value="hanoi">Hanoi
+   <input type="radio" name="answer" id="" value="hcm">HCM City
+   <br></br>
+   <select name="" id="">
+      <option value="select" selected>Select 1 answer</option>
+      <option value="hanoi">Hanoi</option>
+      <option value="hcm">HCM City</option>
+   </select>
+   <img width: 200px; height: 100px>
+   <script>
+      var correct = function() {
+         $('img').hide();
+         $('img').attr("src","correct.jpg");
+         $('img').fadeIn(4000);
+      }
+      var incorrect = function() {
+         $('img').hide();
+         $('img').attr("src","incorrect.jpg");
+         $('img').fadeIn(4000);
+      }
+      $('button#hn').click(function() {
+         correct();
+      })
+      $('button#hcm').click(function() {
+         incorrect();
+      })
+      $('input[type=radio]').change(function() {
+         var a = $('input[type=radio]:checked').val();
+         if (a == 'hanoi') {
+            alert("Correct");
+         } else {
+            alert("Incorrect");
+         } 
+      })
+      $("select").change(function() {
+         var a = $('select').val();
+         if (a == 'hanoi') {
+            correct();
+         } else if (a == "hcm"){
+            incorrect();
+         } 
+      })
+   </script>
+</body>
+</html>

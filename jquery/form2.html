@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>jQuery Form</title>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <!-- khai báo thư viện jquery validate để validate form -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+   <style>
+      label.error {
+         color: red;
+         margin-left: 10px;
+      }
+      input.error {
+         border: 3px dashed red;
+         background-color: lightcoral;
+      }
+   </style>
+</head>
+<body>
+   <form action="">
+      <fieldset>
+         <legend>Registration</legend>
+         Name: <input type="text" name="" id="name" required minlength="3" maxlength="15">
+         <br><br>
+         Age: <input type="number" name="" id="age" min="18" max="50" required>
+         <br><br>
+         Email: <input type="email" name="" id="email" required>
+         <br><br>
+         Gender: 
+         <input type="radio" name="" id="gender" value="Male">Male
+         <input type="radio" name="" id="gender" value="Female">Female
+         <br><br>
+         Education:
+         <select>
+            <option value="High School">High School</option>
+            <option value="College">College</option>
+            <option value="University">University</option>
+            <option value="Higher Education">Higher Education</option>
+         </select>
+         <br><br>
+         Skills:
+         <br>
+         <input type="checkbox" name="" id="skills" value="English"> English <br>
+         <input type="checkbox" name="" id="skills" value="IT"> IT <br>
+         <input type="checkbox" name="" id="skills" value="Teamwork"> Teamwork <br>
+         <input type="checkbox" name="" id="skills" value="Presentation"> Presentation 
+         <br><br>
+         Introduction: <br>
+         <textarea name="" id="" cols="30" rows="5" id="intro"></textarea>
+         <br><br>
+         <button type="button" id="register">Register</button>
+      </fieldset>
+      <br><br>
+      <table border=1>
+         <tr style="color: red">
+            <th>No. </th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Education</th>
+            <th>Skills</th>
+            <th>Introduction</th>
+         </tr>
+      </table>
+      <script>
+         $('table').hide();
+         $('form').css({"color":"blue","font-size":"20px"});
+         $('fieldset').css({'width':'fit-content','background-color':'#f5f242'});
+         $('legend').css({'text-transform':'uppercase','font-style':'italic',
+                           'color':'red','font-size':'30px','font-weight':'bold'});
+         var i = 1;
+         //khởi tạo validation cho form
+         $(document).ready(function() {
+            $('form').validate();
+         })
+
+         $('button#register').click(function() {
+            $('table').show();
+            $('table').append("<tr id=" + i + "> </tr>");
+            $('tr#' + i).append("<td>" + i + "</td>");
+            var name = $('input[type=text]').val();
+            $('tr#' + i).append("<td>" + name + "</td>");
+            var age = $('input[type=number]').val();
+            $('tr#' + i).append("<td>" + age + "</td>"); 
+            var email = $('input[type=email]').val();
+            $('tr#' + i).append("<td>" + email + "</td>"); 
+            var gender = $('input[type=radio]:checked').val();
+            $('tr#' + i).append("<td>" + gender + "</td>"); 
+            var education = $('select').val();
+            $('p#education').append(education);
+            $('tr#' + i).append("<td>" + education + "</td>"); 
+            var skills = []; //empty array
+            $('input[type=checkbox]:checked').each(function() {
+               skills.push($(this).val());
+            })
+            $('tr#' + i).append("<td>" + skills.join(", ") + "</td>");
+            var intro = $('textarea').val();
+            $('tr#' + i).append("<td>" + intro + "</td>");
+            i++;
+         });    
+      </script>
+   </form>
+</body>
+</html>
