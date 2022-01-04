@@ -14,20 +14,4 @@
         <property name="age" value="26"></property>
         <property name="grade" value="6.8"></property>
     </bean>
-
-    <bean id="laptop1" class="spring.mvc.model.Laptop">
-        <property name="name" value="XPS 13"></property>
-        <property name="brand" value="Dell"></property>
-        <property name="price" value="1200"></property>
-        <property name="color" value="silver"></property>
-        <property name="weight" value="1.2"></property>
-    </bean>
-
-    <bean id="laptop2" class="spring.mvc.model.Laptop">
-        <property name="name" value="Envy 13"></property>
-        <property name="brand" value="HP"></property>
-        <property name="price" value="1100"></property>
-        <property name="color" value="White"></property>
-        <property name="weight" value="1.1"></property>
-    </bean>
 </beans>
