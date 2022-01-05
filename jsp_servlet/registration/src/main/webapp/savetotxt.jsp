@@ -15,7 +15,7 @@
 <body>
 <%
     try {
-        String filename = "data.txt";
+        String filename = "C:/12345.txt";
         PrintWriter pw = new PrintWriter(filename);
         String name = request.getParameter("name");
         String mobile = request.getParameter("mobile");
