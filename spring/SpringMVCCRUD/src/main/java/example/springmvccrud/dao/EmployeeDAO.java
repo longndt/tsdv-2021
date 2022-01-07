@@ -34,4 +34,20 @@ public class EmployeeDAO {
       return template.query(sql,
               new BeanPropertyRowMapper<>(Employee.class));
     }
+    public List<Employee> sortBySalaryAsc() {
+        String sql = "SELECT * FROM Employee ORDER BY salary ASC";
+        return template.query(sql,
+                new BeanPropertyRowMapper<>(Employee.class));
+    }
+    public List<Employee> sortBySalaryDesc() {
+        String sql = "SELECT * FROM Employee ORDER BY salary DESC";
+        return template.query(sql,
+                new BeanPropertyRowMapper<>(Employee.class));
+    }
+    public List<Employee> searchByName(String name) {
+        String sql = "SELECT * FROM Employee WHERE name LIKE ?";
+        return template.query(sql,
+                new BeanPropertyRowMapper<>(Employee.class),
+                new Object[]{'%' + name + '%'});
+    }
 }
