@@ -8,23 +8,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-<<<<<<< HEAD
     <title>Employee Management</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-</head>
-<body>
- <jsp:include page="header.jsp" />
-    <div style="text-align: center;">
-        <img src="resources/images/employee.jpg" width="80%" height="80%">
-    </div>
- <jsp:include page="footer.jsp" />
-=======
+    <link rel="stylesheet" src="resources/css/bootstrap-min.css">
+    <script src="resources/js/bootstrap/bootstrap.bundle.min.js"></script>
 </head>
 <body>
  <jsp:include page="navbar.jsp" />
     <div style="text-align: center;">
+        <img src="resources/images/employee.jpg" width="80%" height="80%">
     </div>
->>>>>>> 02db3cd55974a228d19f3ee016c870d45054fceb
+ <jsp:include page="footer.jsp" />
 </body>
 </html>
 

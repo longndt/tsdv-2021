@@ -12,12 +12,12 @@ public class EmployeeDAO {
         this.template = template;
     }
     public int add(Employee e) {
-        String sql = "INSERT INTO Employee(name, salary) VALUES (?, ?)";
-        return template.update(sql, e.getName(), e.getSalary());
+        String sql = "INSERT INTO Employee(name, salary, email, mobile, address, image) VALUES (?, ?, ?, ?, ?, ?)";
+        return template.update(sql, e.getName(), e.getSalary(), e.getEmail(), e.getMobile(), e.getAddress(), e.getImage());
     }
     public int edit(Employee e) {
-        String sql = "UPDATE Employee SET name = ?, salary = ? WHERE id = ?";
-        return template.update(sql, e.getName(), e.getSalary(), e.getId());
+        String sql = "UPDATE Employee SET name = ?, salary = ?, email = ?, mobile = ?, address = ?, image = ? WHERE id = ?";
+        return template.update(sql, e.getName(), e.getSalary(), e.getEmail(), e.getMobile(), e.getAddress(), e.getImage(), e.getId());
     }
     public int delete(int id) {
         String sql = "DELETE FROM Employee WHERE id = ?";

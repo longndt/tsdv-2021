@@ -30,6 +30,13 @@ public class EmployeeController {
         return "viewemployee";
     }
 
+    @RequestMapping(value = "/viewemployee/{id}")
+    public String viewEmployeeById(Model m, @PathVariable ("id") int id) {
+        Employee employee = dao.getEmployeeById(id);
+        m.addAttribute("employee", employee);
+        return "employeedetail";
+    }
+
     @RequestMapping(value="/addemployee")
     public String addEmployee(Model m) {
         m.addAttribute("command", new Employee());
