@@ -5,7 +5,7 @@
     <title>Customer Registration</title>
 </head>
 <body>
-    <form action="savetobin.jsp" method="POST">
+    <form action="savetotxt.jsp" method="POST">
         <fieldset style="width: fit-content">
             <legend style="color: red">Customer Registration</legend>
             Full Name: <input type="text" name="name" required minlength="5" maxlength="30">

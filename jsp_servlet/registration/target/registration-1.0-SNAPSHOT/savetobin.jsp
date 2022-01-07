@@ -16,7 +16,7 @@
 <body>
 <%
     try {
-        String filename = "data.bin";
+        String filename = "C:/data.bin";
         FileOutputStream fos = new FileOutputStream(filename);
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         ArrayList<String> data = new ArrayList<>();
