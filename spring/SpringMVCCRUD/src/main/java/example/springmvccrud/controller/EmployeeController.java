@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -27,6 +28,13 @@ public class EmployeeController {
         List<Employee> list = dao.getEmployeeList();
         m.addAttribute("list",list);
         return "viewemployee";
+    }
+
+    @RequestMapping(value = "/viewemployee/{id}")
+    public String viewEmployeeById(Model m, @PathVariable ("id") int id) {
+        Employee employee = dao.getEmployeeById(id);
+        m.addAttribute("employee", employee);
+        return "employeedetail";
     }
 
     @RequestMapping(value="/addemployee")
@@ -58,5 +66,34 @@ public class EmployeeController {
     public String deleteEmployee(@PathVariable int id) {
         dao.delete(id);
         return "redirect:/viewemployee";
+    }
+
+    @RequestMapping(value = "/sortbysalaryasc")
+    public String sortBySalaryAscending(Model m) {
+        List<Employee> list = dao.sortBySalaryAsc();
+        m.addAttribute("list",list);
+        return "viewemployee";
+    }
+
+    @RequestMapping(value = "/sortbysalarydesc")
+    public String sortBySalaryDescending(Model m) {
+        List<Employee> list = dao.sortBySalaryDesc();
+        m.addAttribute("list",list);
+        return "viewemployee";
+    }
+
+    @RequestMapping(value = "/searchbyname")
+    public String searchNameByForm(Model m, HttpServletRequest request) {
+        String keyword = request.getParameter("name");
+        List<Employee> list = dao.searchByName(keyword);
+        m.addAttribute("list", list);
+        return "viewemployee";
+    }
+
+    @RequestMapping(value = "/searchbyname/{keyword}")
+    public String searchNameByURL(Model m, @PathVariable("keyword") String name) {
+        List<Employee> list = dao.searchByName(name);
+        m.addAttribute("list", list);
+        return "viewemployee";
     }
 }

@@ -8,13 +8,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <title>Employee Management</title>
+    <link rel="stylesheet" src="resources/css/bootstrap-min.css">
+    <script src="resources/js/bootstrap/bootstrap.bundle.min.js"></script>
 </head>
 <body>
  <jsp:include page="navbar.jsp" />
     <div style="text-align: center;">
-        <img src="https://y26uq11r8xr1zyp0d3inciqv-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/32-1-1024x597.jpg"
-             width="80%" height="80%">
+        <img src="resources/images/employee.jpg" width="80%" height="80%">
     </div>
+ <jsp:include page="footer.jsp" />
 </body>
 </html>
 
