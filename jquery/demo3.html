@@ -16,6 +16,12 @@
       <option value="french">French</option>
    </select>
    <br><br>
+   <table border="1">
+      <tr>
+         <th id='a1'>Number</th>
+         <th id='a2'>Name</th>
+      </tr>
+   </table>
    <input type="radio" class="bg" name="background" value="yellow"> Yellow 
    <input type="radio" class="bg" name="background"value="green"> Green
    <input type="radio" class="bg" name="background" value="brown"> Brown
@@ -26,11 +32,14 @@
       <button type="button" id="ok">OK</button>
    </form>
    <script>
+
       $("#ok").click(function(){
          var c = $("#color").val();
          $("h1").css("color", c);
       })
       $("#language").change(function() {
+         $('th.fullname').html("Họ tên");
+         $('#a2').html("Tên");
          var message = "";
          if ($(this).val() == "vietnamese") {
             message  = "Xin chào";

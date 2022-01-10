@@ -16,14 +16,14 @@ public class CustomerController {
     @Autowired
     CustomerRepository customerRepository;
 
-    @RequestMapping(value = "/customers")
+    @RequestMapping(value = "/")
     public String getAllCustomer(Model model) {
         List<Customer> customers = customerRepository.findAll();
         model.addAttribute("customers",customers);
         return "customerList";
     }
 
-    @RequestMapping(value = "/customer/{id}")
+    @RequestMapping(value = "/{id}")
     public String getCustomerById(
             @PathVariable(value = "id") Long id, Model model) {
         Customer customer = customerRepository.getById(id);
@@ -31,48 +31,36 @@ public class CustomerController {
         return "customerDetail";
     }
 
-    @GetMapping(value = "/customer/add")
-    public String showAddForm (Customer customer) {
+    @RequestMapping (value = "/add")
+    public String addCustomer (Model model) {
+        Customer  customer = new Customer();
+        model.addAttribute("customer", customer);
         return "customerAdd";
     }
 
-    @PostMapping(value = "/customer/add")
-    public String addCustomer (Model model, @Valid Customer customer, BindingResult result) {
-        if (result.hasErrors()) {
-            return "customerAdd";
-        }
-        customerRepository.save(customer);
-        model.addAttribute("customer", customer);
-        return "redirect:/customers";
-    }
-
-    @GetMapping(value = "/customer/update/{id}")
+    @RequestMapping(value = "/update/{id}")
     public String showUpdateForm(
-            @PathVariable (value = "id") Long id,
-            Customer customer, Model model)  {
-        customer = customerRepository.getById(id);
+            @PathVariable (value = "id") Long id, Model model)  {
+        Customer customer = customerRepository.getById(id);
         model.addAttribute(customer);
         return "customerUpdate";
     }
 
-    @RequestMapping(value = "/customer/update")
-    public String updateCustomer(
-            @RequestParam(value = "id", required = false) Long id,
-            @Valid Customer customer, BindingResult result)
+    @RequestMapping(value = "/save")
+    public String saveUpdate(
+            Customer customer,
+            @RequestParam(value = "id", required = false) Long id)
     {
-        if (result.hasErrors()) {
-            return "customerUpdate";
-        }
         customer.setId(id);
         customerRepository.save(customer);
-        return "redirect:/customers";
+        return "redirect:/";
     }
 
-    @RequestMapping(value = "/customer/delete/{id}")
+    @RequestMapping(value = "/delete/{id}")
     public String deleteCustomer(
             @PathVariable(value = "id") Long id) {
         Customer customer = customerRepository.getById(id);
         customerRepository.delete(customer);
-        return "redirect:/customers";
+        return "redirect:/";
     }
 }
