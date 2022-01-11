@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="_layout">
+<body>
+<div layout:fragment="content" class="container col-md-8 mt-4">
+    <div class="row text-center">
+        <div class="col">
+            <img th:src="@{${category.image}}" width="300" height="300">
+        </div>
+        <div class="col border">
+            <h2 class="text-success" th:text="${category.name}" />
+            <h6 th:text="${category.description}" />
+            <h5 th:each="product: ${products}">
+                <a class="text-decoration-none" th:href="'/product/' + ${product.id}"
+                   th:if="(${product.category.getId()} == ${category.id})" th:text="${product.name}" />
+            </h5>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

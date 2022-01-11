@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="_layout">
+<body>
+<body>
+<div layout:fragment="content" class="container col-md-5 text-center mt-4">
+    <a th:href="@{/category/add}">
+        <img th:src="@{/images/add.png}">
+    </a>
+    <table class="table table-bordered table-hover mt-3">
+        <thead>
+            <tr>
+                <th>Category Name
+                    <a th:href="@{/category/asc}" class="text-decoration-none">
+                        <img th:src="@{/images/up.jpg}">
+                    </a>
+                    <a th:href="@{/category/desc}" class="text-decoration-none">
+                        <img th:src="@{/images/down.jpg}">
+                    </a>
+                </th>
+                <th>Category Image</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="category: ${categories}">
+                <td th:text="${category.name}" />
+                <td>
+                    <a class="link-info" th:href="'/category/' + ${category.id}"/>
+                        <img th:src="@{${category.image}}" width="150" height="150">
+                    </a>
+                </td>
+                <td>
+                    <a th:href="'/category/update/' + ${category.id}">
+                        <img th:src="@{/images/update.png} "/>
+                    </a>
+                </td>
+                <td>
+                    <a th:href="'/category/delete/' + ${category.id}" onclick="return confirm('Do you want to delete this category ?');" >
+                        <img th:src="@{/images/delete.png} "/>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

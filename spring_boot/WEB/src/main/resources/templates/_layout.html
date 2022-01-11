@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <script type="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</head>
+<body>
+<div class="navigation">
+    <nav class="navbar navbar-light bg-light">
+        <form class="container-fluid justify-content-start">
+            <a class="btn btn-outline-danger me-3" th:href="@{/}" th:text="Home" />
+            <a class="btn btn-outline-success me-3" th:href="@{/product}" th:text="Product" />
+            <a class="btn btn-outline-success me-3" th:href="@{/category}" th:text="Category" />
+            <a class="btn btn-outline-success me-3" th:href="@{/shop}" th:text="Shop" />
+            <a class="btn btn-outline-info me-3" th:href="@{/logout}" th:text="Logout" />
+        </form>
+    </nav>
+</div>
+<div layout:fragment="content">
+    <!-- content page will override this -->
+</div>
+</body>
+</html>
