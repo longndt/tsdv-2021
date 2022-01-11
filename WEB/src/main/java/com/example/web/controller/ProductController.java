@@ -1,7 +1,7 @@
 package com.example.web.controller;
 
-import com.example.web.model.*;
-import com.example.web.model.Product;
+import com.example.web.entity.*;
+import com.example.web.entity.Product;
 import com.example.web.repository.CategoryRepository;
 import com.example.web.repository.ProductDetailRepository;
 import com.example.web.repository.ProductRepository;
@@ -33,11 +33,7 @@ public class ProductController {
     @RequestMapping("")
     public String getProductList(Model model) {
         List<Product> products = productRepository.findAll();
-        List<ProductDetail> productDetails = productDetailRepository.findAll();
-        List<Shop> shops = shopRepository.findAll();
         model.addAttribute("products", products);
-        model.addAttribute("productDetails", productDetails);
-        model.addAttribute("shops", shops);
         return "productList";
     }
 
@@ -107,6 +103,6 @@ public class ProductController {
             @RequestParam(value = "name") String name) {
         List<Product> products  = productRepository.findByNameContaining(name);
         model.addAttribute("products", products);
-        return "productList";
+        return "redirect:/product";
     }
 }

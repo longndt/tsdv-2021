@@ -1,7 +1,7 @@
 package com.example.web.controller;
 
-import com.example.web.model.Product;
-import com.example.web.model.Shop;
+import com.example.web.entity.Product;
+import com.example.web.entity.Shop;
 import com.example.web.repository.ProductRepository;
 import com.example.web.repository.ShopRepository;
 import org.springframework.beans.factory.annotation.Autowired;

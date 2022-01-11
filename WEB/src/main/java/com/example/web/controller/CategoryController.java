@@ -1,7 +1,7 @@
 package com.example.web.controller;
 
-import com.example.web.model.Category;
-import com.example.web.model.Product;
+import com.example.web.entity.Category;
+import com.example.web.entity.Product;
 import com.example.web.repository.CategoryRepository;
 import com.example.web.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,13 +76,13 @@ public class CategoryController {
     public String sortCategoryAsc(Model model) {
         List<Category> categories = categoryRepository.findAll(Sort.by(Sort.Direction.ASC, "name"));
         model.addAttribute("categories", categories);
-        return "redirect:/category";
+        return "categoryList";
     }
 
     @RequestMapping("/desc")
     public String sortCategoryDesc(Model model) {
         List<Category> categories = categoryRepository.findAll(Sort.by(Sort.Direction.DESC, "name"));
         model.addAttribute("categories", categories);
-        return "redirect:/category";
+        return "categoryList";
     }
 }
