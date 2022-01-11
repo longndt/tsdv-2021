@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Detail</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="container mt-3 text-center mt-4">
+    <div class="container-sm border border-2 w-50">
+        <h2 th:text="'Name: ' + ${customer.name}" />
+        <h2 th:text="'Age: ' + ${customer.age}" />
+        <h2 th:text="'Address: ' + ${customer.address}" />
+    </div>
+    <br><br>
+    <a th:href="@{/customers}">
+        <img th:src="@{/images/back.png}"/>
+    </a>
+</div>
+</body>
+</html>
+
