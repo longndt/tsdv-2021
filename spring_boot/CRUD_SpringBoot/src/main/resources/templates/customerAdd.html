@@ -10,22 +10,19 @@
 <div class="container col-md-5 mt-4">
     <div class="card">
         <div class="card-body">
-            <form th:action="@{/customer/add}" th:object="${customer}" method="post">
+            <form th:action="@{/save}" th:object="${customer}" method="post">
                 <h2 class="text-center text-primary">ADD CUSTOMER</h2>
                 <fieldset class="form-group">
                     <label>Customer name </label>
                     <input class="form-control" type="text" th:field="*{name}">
-                    <p th:if="${#fields.hasErrors('age')}" th:errorclass="error" th:errors="*{name}" />
                 </fieldset>
                 <fieldset>
                      <label>Customer age</label>
                      <input class="form-control" type="number" th:field="*{age}">
-                     <p th:if="${#fields.hasErrors('age')}" th:errorclass="error" th:errors="*{age}" />
                 </fieldset>
                 <fieldset class="form-group">
                     <label>Customer address </label>
                     <input class="form-control" type="text" th:field="*{address}">
-                    <p th:if="${#fields.hasErrors('age')}" th:errorclass="error" th:errors="*{address}" />
                 </fieldset>
                 <div class="col text-center mt-3">
                     <button type="submit" class="btn btn-success">ADD</button>

@@ -14,25 +14,25 @@ public class CustomerAPIController {
     @Autowired
     CustomerRepository customerRepository;
 
-    @GetMapping("/customer")
+    @GetMapping("")
     public List<Customer> getAllCustomer() {
         return customerRepository.findAll();
     }
 
-    @GetMapping("/customer/{id}")
+    @GetMapping("/{id}")
     public Customer getCustomerById(
             @PathVariable(value = "id") Long id) {
         Customer customer = customerRepository.findById(id).get();
         return customer;
     }
 
-    @PostMapping("/customer/add")
+    @PostMapping("/add")
     public Customer addCustomer(
             @Valid @RequestBody Customer customer) {
         return customerRepository.save(customer);
     }
 
-    @PutMapping("/customer/update/{id}")
+    @PutMapping("/update/{id}")
     public void updateCustomer(
             @PathVariable(value = "id") Long id,
             @Valid @RequestBody Customer customer) {
@@ -42,7 +42,7 @@ public class CustomerAPIController {
         }
     }
 
-    @DeleteMapping("/customer/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public void deleteCustomer(
             @PathVariable(value = "id") Long id) {
         Customer customer = customerRepository.findById(id).get();
